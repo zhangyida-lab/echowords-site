@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="语栖 Chrome 扩展隐私政策：了解采词、本地保存、音标查询、Google Drive 同步与数据删除。">
+  <title>Chrome 扩展隐私政策 · 语栖 EchoWords</title>
+  <link rel="icon" href="../assets/icon-128.png" type="image/png">
+  <link rel="stylesheet" href="../assets/site.css">
+  <script src="../assets/language.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳转到正文 / Skip to content</a>
+  <header class="site-header"><div class="shell header-inner">
+    <a class="brand" href="../" aria-label="语栖主页" data-brand-home><img src="../assets/icon-128.png" alt="" width="40" height="40"><span data-brand-name>语栖</span></a>
+    <nav class="header-nav" aria-label="Page navigation"><a href="../?lang=zh" data-nav-zh>主页</a><a href="../?lang=en" data-nav-en>Home</a><span class="nav-divider" aria-hidden="true"></span><a href="?lang=zh" data-language-link="zh" lang="zh-CN">中文</a><a href="?lang=en" data-language-link="en" lang="en">EN</a></nav>
+  </div></header>
+  <main id="main" class="shell policy" data-policy-platform="chrome">
+    <article id="zh" data-language-section="zh" lang="zh-CN" aria-labelledby="title-zh">
+      <p class="kicker">语栖 · Chrome 扩展</p><h1 id="title-zh">Chrome 扩展隐私政策</h1><p class="date">更新日期：2026 年 11 月 3 日</p>
+      <p class="lead">语栖 Chrome 扩展保存你从网页、当前可见的 YouTube 字幕及 PDF 中主动选取的词语。单词本首先保存在当前 Chrome 配置文件中。</p>
+
+      <h2>保存在设备上的数据</h2>
+      <p>扩展保存单词及修改、附近文章文本或可见字幕、来源标题与网址、采集时间、YouTube 视频 ID 与时间戳，以及词条翻译、可选的英文语境解释和复习进度。词库使用 IndexedDB；语言偏好保存在 localStorage，同步状态保存在浏览器本地存储中。</p>
+      <p>新采集的文章上下文最多保存 500 字符，来源标题最多 500 字符。YouTube 在内存中暂存最近约 20 秒、最多 1,200 字符的可见字幕，用于定位所选词所在的句子；仅保存该句，最多 1,200 字符。表单控件和可编辑区域不支持采集。新来源网址会移除嵌入的用户名、密码及常见跟踪参数（<code>utm_*</code>、<code>gclid</code>、<code>fbclid</code>、<code>msclkid</code>）；其余文章查询参数和片段会保留以便回访，仍可能含隐私信息。YouTube 来源链接仅保留视频 ID，播放时间单独保存。历史记录和导入备份不会自动清理。</p>
+
+      <p>词汇列表的每页数量保存在当前 Chrome 配置文件的 localStorage 中，不进入词库备份或 Google Drive 同步。</p>
+      <h2>音标查询</h2>
+      <p>Chrome 扩展保存新采集的英文词后，仅将该单词发送给 Free Dictionary API 查询美式优先的 IPA 音标；不会发送网页地址、字幕、上下文或账号资料。查询失败不影响单词保存。已有词条只有在你点击“查询音标”时才会查询。音标与 Wiktionary 来源链接保存在本地，启用 Drive 同步后也会进入词库快照。音标旁会展示词典和 Wiktionary 来源。</p>
+
+      <h2>Google Drive 自动同步</h2>
+      <p>Chrome 会将本地改动聚合约 30 秒后同步，连续操作时最长等待约 2 分钟，空闲时每 15 分钟检查远端文件元数据。仅下载变化的文件，词库和学习历史分别跳过未变化的上传；有变化时仍上传完整文件。本地 IndexedDB 保存已应用文件版本和成功上传的内容摘要，以避免后台重启后重复传输。</p>
+      <p>你启用同步并授权 Google 账号后，扩展会向该账号的隐藏应用数据目录上传<strong>完整单词本</strong>，包括词语、来源网址与摘录、采集记录、翻译、语境解释、复习记录和删除标记。扩展会在本地修改后及浏览器运行时自动同步，你也可以在设置中暂停。连接同一账号的 iPhone 应用可以读取这些词库快照，并将对 Chrome 词语的评分事件作为单独的学习历史文件上传。</p>
+      <p>同步使用 Google 授权，无需另注册账号。语栖通过 Google Drive API 读取授权账号的邮箱地址与账号标识，以显示并确认同步目标；本地保存账号标识和邮箱地址，以便显示同步状态并阻止意外切换账号。云端快照位于 Google Drive 的 <code>appDataFolder</code>，不会显示在普通的“我的云端硬盘”文件列表中。云端文件按设备分别保存，不会因为一次本地更新而自动删除。</p>
+      <p>语栖不会将单词本发送给开发者服务器、分析或广告服务。对 Google API 数据的使用仅限于本政策描述的同步功能。语栖对从 Google API 获取的信息的使用遵守 Chrome Web Store User Data Policy，包括其中的 Limited Use 要求。</p>
+      <h2>翻译、导入与导出</h2>
+      <p>选择中文目标语言后，语栖使用 Chrome 内置的 Translator API，在设备上翻译已保存的英文词和中文词条；不会向远程 AI 服务请求翻译。Chrome 可能下载所需的语言包。只有你主动选择导出时才会生成 JSON 文件；“导出到 iPhone”只包含词语及对应翻译，“导出 JSON”包含完整备份记录。导出操作不会上传文件。导入备份只读取你选择的文件并合并到本地数据库；启用自动同步后，导入的词条也会随词库同步。</p>
+
+      <p>选择 English（英英释义）后，语栖会自动将已保存的英文词及最近保存的句子交给本机 Prompt API，生成简短英文释义。释义保存在本地，可人工编辑，并包含在完整备份及已启用的 Drive 同步中；已有结果和人工编辑会保留。不会将词或句子发送给远程 AI 服务。Chrome 可能下载所需的本机模型。</p>
+      <h2>设备端语境解释</h2>
+      <p>你为已保存的采集记录点击“解释这次用法”时，语栖会将该词和保存的句子交给 Chrome 内置的设备端 Prompt API。生成的英文词义及判断依据与该记录一起保存在本地；你可以编辑或删除。完整 JSON 备份会包含这些解释；启用 Drive 同步后，解释也会进入发送到你 Google 账号的词库快照。此功能不会把单词或句子发送给远程 AI 服务。Chrome 可能下载所需的设备端模型。</p>
+
+      <h2>浏览器权限</h2>
+      <p>文章选词模式仅将你主动选择的单词、短语及附近原句暂存在当前页面内存中，点击“保存全部”后才写入词库。未保存的选择不会同步，刷新或离开页面后即丢失。</p>
+      <ul>
+        <li><code>activeTab</code> 与 <code>scripting</code>：在你触发快捷键或点击网页采集按钮后读取明确选中的文本。</li>
+        <li><code>http://*/*</code> 与 <code>https://*/*</code> 是可选权限，安装时不要求访问所有网站。在“网页采集”设置中逐个授权 HTTP 或 HTTPS 网站后，才在该网站加载按钮脚本；协议和子域名需分别授权。未授权网站仍可通过快捷键与 <code>activeTab</code> 采集。按钮只在你开始采集后读取文章文本。</li>
+        <li><code>https://www.youtube.com/*</code>：读取当前显示在屏幕上的字幕，并保持视频原有播放状态。</li>
+        <li><code>contextMenus</code>：提供由你触发的 PDF 选词菜单。</li>
+        <li><code>offscreen</code>：在词库页面关闭时读取已保存的语言偏好，运行设备端翻译。</li>
+        <li><code>identity</code> 与 <code>https://www.googleapis.com/*</code>：启用同步后请求 Google 授权并访问 Drive 应用数据。</li>
+        <li><code>https://freedictionaryapi.com/*</code>：查询新采集或手动重试的英文单词音标。</li>
+        <li><code>storage</code> 与 <code>alarms</code>：保存同步状态，并在 Chrome 运行时安排重试和定期检查。</li>
+      </ul>
+      <p>语栖不监控剪贴板，不自动采集整个网页，也不下载完整 YouTube 字幕稿。</p>
+
+      <p>按钮总开关、已启用与已隐藏网站、YouTube 按钮显隐与更新说明确认状态保存在 <code>chrome.storage.local</code>，不进入词库备份或 Drive 同步。关闭总开关保留授权；隐藏网站会撤销该站可选权限和动态脚本注册，同时保留可点击“显示按钮”恢复的隐藏记录。“移除”会忘记该记录。恢复时会重新请求网站授权。点击工具栏图标后，当前网站的域名和协议会暂存于 <code>chrome.storage.session</code>，用于提供当前网站的恢复入口；不含网页路径或查询参数，仅保留于浏览器会话，不进入备份或同步。已加载脚本停止选词并隐藏按钮，刷新或离开页面后由 Chrome 卸载。</p>
+      <h2>保留与删除</h2>
+      <p>本地数据会保留到你删除词条、清除应用数据、移除应用或删除 Chrome 配置文件。删除词条会生成删除标记，使其他设备在同步时识别该删除。Google Drive 快照保留在你的账号中，直到你移除相应的应用数据；清空本地词库后同步只会更新快照的逻辑内容，不会删除云端文件。你可以随时使用“导出 JSON”制作本地备份。</p>
+
+      <h2>联系我们与政策更新</h2>
+      <p>有关隐私或同步的问题，请联系 <a href="mailto:acboo2020@gmail.com">acboo2020@gmail.com</a>。若数据使用方式改变，我们会在相关功能发布前更新本政策。</p>
+      <a class="policy-nav" href="../?lang=zh">← 返回语栖主页</a>
+    </article>
+
+    <article id="en" data-language-section="en" lang="en" aria-labelledby="title-en">
+      <p class="kicker">EchoWords · Chrome extension</p><h1 id="title-en">Chrome Extension Privacy Policy</h1><p class="date">Updated November 3, 2026</p>
+      <p class="lead">The EchoWords Chrome extension saves words you explicitly select from web pages, currently visible YouTube captions, and PDFs. The notebook is stored in your current Chrome profile first.</p>
+
+      <h2>Data stored on your device</h2>
+      <p>The extension stores words and your edits, nearby article text or visible caption context, source titles and URLs, capture times, YouTube video IDs and timestamps, translations, optional English explanations in saved sentence context, and review progress. The notebook uses IndexedDB; the language preference is kept in localStorage and sync state in browser local storage.</p>
+      <p>New article context is limited to 500 characters and source titles to 500 characters. YouTube temporarily keeps up to 20 seconds and 1,200 characters of recently visible captions in memory to locate the selected sentence; only that sentence is saved, up to 1,200 characters. Capture is unavailable in forms and editable areas. New source links omit embedded usernames/passwords and common tracking parameters (<code>utm_*</code>, <code>gclid</code>, <code>fbclid</code>, <code>msclkid</code>). Other article query parameters and fragments remain for working links and may contain private information. YouTube links retain only the video ID, with playback time stored separately. Historical records and imported backups are not automatically scrubbed.</p>
+
+      <p>The vocabulary page-size preference is stored in localStorage for this Chrome profile only and is excluded from notebook backups and Google Drive sync.</p>
+      <h2>IPA lookup</h2>
+      <p>After saving a newly captured English word, the Chrome extension sends only that word to Free Dictionary API to look up IPA, preferring a US pronunciation. It sends no page URL, caption, context, or account details. Lookup failure does not affect the saved word. Older words are queried only when you select “Look up IPA.” IPA and the Wiktionary source link are stored locally and included in Drive snapshots if sync is enabled. Dictionary and Wiktionary attribution appears beside the IPA.</p>
+
+      <h2>Automatic Google Drive sync</h2>
+      <p>Chrome batches local changes for about 30 seconds, up to 2 minutes during continuous changes, and checks remote file metadata every 15 minutes. Only changed files are downloaded, and unchanged vocabulary and learning-history uploads are skipped independently. Changed files still contain complete snapshots. Applied file versions and successful upload content digests are stored locally in IndexedDB to avoid repeated transfers after a background-worker restart.</p>
+      <p>After you enable sync and authorize a Google account, the extension uploads your <strong>full notebook</strong> to its hidden app data folder. This includes words, source URLs and excerpts, capture records, translations, context explanations, review records, and deletion markers. The extension automatically syncs after local changes and while the browser runs; you can pause it in Settings. An iPhone app connected to the same account can read these notebook snapshots and upload ratings for Chrome words as separate learning-history files.</p>
+      <p>Sync uses Google authorization; no EchoWords account is required. EchoWords reads the authorized account’s email address and identifier through the Google Drive API to show and confirm the sync destination. It stores the identifier and email locally to display sync status and prevent an accidental account change. Cloud snapshots reside in Google Drive’s <code>appDataFolder</code> and do not appear in the normal My Drive file list. Snapshots are kept separately for each device and are not automatically deleted by a local update.</p>
+      <p>EchoWords does not send your notebook to a developer server, analytics provider, or advertiser. Its use of Google API data is limited to the sync feature described here. EchoWords's use of information received from Google APIs adheres to the Chrome Web Store User Data Policy, including the Limited Use requirements.</p>
+      <h2>Translation, import, and export</h2>
+      <p>After you choose a Chinese target language, EchoWords uses Chrome’s built-in Translator API to translate saved English and Chinese words on your device; it does not request translation from a remote AI service. Chrome may download required language packs. A JSON file is created only when you choose an export action: “Export for iPhone” contains words and their translations, while “Export JSON” contains full backup records. Export does not upload a file. Import reads only the backup you select and merges valid records locally; with automatic sync enabled, imported words are included in subsequent syncs.</p>
+
+      <p>Choosing English (definitions) automatically provides saved English words and their latest saved sentence to Chrome’s on-device Prompt API for short plain-English definitions. Definitions are stored locally, can be edited, and are included in full backups and enabled Drive sync. Existing definitions and manual edits are retained. No word or sentence is sent to a remote AI provider. Chrome may download the required on-device model.</p>
+      <h2>On-device context explanations</h2>
+      <p>When you select “Explain this use” for a saved encounter, EchoWords provides that word and its saved sentence to Chrome’s on-device Prompt API. The generated English meaning and supporting reason are stored locally with the encounter; you can edit or delete them. Full JSON backups include these explanations, and enabling Drive sync includes them in the notebook snapshot sent to your Google account. This feature does not send the word or sentence to a remote AI provider. Chrome may download the required on-device model.</p>
+
+      <h2>Chrome permissions</h2>
+      <p>Article selection mode keeps only explicitly chosen words, phrases, and nearby sentences in the current page’s memory until you choose “Save all.” Unsaved selections are not synced and disappear when you refresh or leave the page.</p>
+      <ul>
+        <li><code>activeTab</code> and <code>scripting</code> read explicitly selected text after you invoke the shortcut or click the page capture button.</li>
+        <li><code>http://*/*</code> and <code>https://*/*</code> are optional host permissions. Access to all websites is not required at installation. Authorize individual HTTP or HTTPS websites in Page capture settings to load article button scripts there. Protocols and subdomains are separate. The shortcut still works via <code>activeTab</code> without saved website authorization. Article text is read only after you start capture.</li>
+        <li><code>https://www.youtube.com/*</code> reads only captions currently rendered on screen and preserves playback state.</li>
+        <li><code>contextMenus</code> provides the user-triggered PDF selection action.</li>
+        <li><code>offscreen</code> reads your saved language preference and runs on-device translation when the notebook page is closed.</li>
+        <li><code>identity</code> and <code>https://www.googleapis.com/*</code> request Google consent and access Drive app data after sync is enabled.</li>
+        <li><code>https://freedictionaryapi.com/*</code> looks up IPA for newly captured English words or a manual retry.</li>
+        <li><code>storage</code> and <code>alarms</code> retain sync state and schedule retries and periodic checks while Chrome runs.</li>
+      </ul>
+      <p>EchoWords does not monitor your clipboard, automatically collect whole pages, or download complete YouTube transcripts.</p>
+
+      <p>Button visibility, enabled and hidden websites, YouTube visibility and release acknowledgement are stored in <code>chrome.storage.local</code>, excluded from notebook backups and Drive sync. Turning buttons off preserves authorizations. Hiding a website revokes its optional permission and dynamic registration but retains a hidden entry with a Show button action. Remove forgets that entry. Restoring requests website permission again. Clicking the toolbar icon keeps the current hostname/protocol in <code>chrome.storage.session</code> to offer a restore action; this hint contains no page path or query, lasts only for the browser session, and is excluded from backups and sync. Loaded scripts stop selection and hide the button; Chrome unloads them when the page is refreshed or left.</p>
+      <h2>Retention and deletion</h2>
+      <p>Local data remains until you delete words, clear extension data, remove the extension, or delete your Chrome profile. Deleting a word creates a deletion marker so other devices can recognize it on a later sync. Drive snapshots remain in your Google account until you remove the associated app data; clearing the local notebook and syncing updates their logical contents but does not remove the cloud files. You can create a local backup with “Export JSON.”</p>
+
+      <h2>Contact and changes</h2>
+      <p>For privacy or sync questions, contact <a href="mailto:acboo2020@gmail.com">acboo2020@gmail.com</a>. Changes in data use will be documented here before the related feature is released.</p>
+      <a class="policy-nav" href="../?lang=en">← Back to EchoWords</a>
+    </article>
+  </main>
+  <footer class="site-footer shell"><span data-brand-footer>© 语栖</span><a href="../?lang=zh" data-nav-zh>主页</a><a href="../?lang=en" data-nav-en>Home</a><a href="../releases/?lang=zh" data-nav-zh>更新日志</a><a href="../releases/?lang=en" data-nav-en>Release notes</a><a href="mailto:acboo2020@gmail.com">联系 / Contact</a></footer>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="语栖 EchoWords Chrome 扩展更新日志：查看每个版本的新功能、体验优化和问题修复。">
+  <title>更新日志 · 语栖 EchoWords</title>
+  <link rel="icon" href="../assets/icon-128.png" type="image/png">
+  <link rel="stylesheet" href="../assets/site.css">
+  <script src="../assets/language.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳转到正文 / Skip to content</a>
+  <header class="site-header"><div class="shell header-inner">
+    <a class="brand" href="../" aria-label="语栖主页" data-brand-home><img src="../assets/icon-128.png" alt="" width="40" height="40"><span data-brand-name>语栖</span></a>
+    <nav class="header-nav" aria-label="Page navigation"><a href="../?lang=zh" data-nav-zh>主页</a><a href="../?lang=en" data-nav-en>Home</a><span class="nav-divider" aria-hidden="true"></span><a href="?lang=zh" data-language-link="zh" lang="zh-CN">中文</a><a href="?lang=en" data-language-link="en" lang="en">EN</a></nav>
+  </div></header>
+  <main id="main" class="shell changelog">
+    <div data-language-section="zh" lang="zh-CN">
+      <p class="kicker">语栖 · Chrome 扩展</p><h1>更新日志</h1>
+      <p class="changelog-intro">每次更新，改进了什么，都记录在这里。待发布内容会明确标注，正式发布后补充日期。</p>
+      <nav class="version-index" aria-label="版本目录"><a href="#v0-1-2">0.1.2 · 待发布</a><a href="#v0-1-1">0.1.1 · 已发布</a></nav>
+    </div>
+    <div data-language-section="en" lang="en" hidden>
+      <p class="kicker">EchoWords · Chrome extension</p><h1>Release notes</h1>
+      <p class="changelog-intro">See what changes with each update. Upcoming versions are marked clearly; release dates are added when they ship.</p>
+      <nav class="version-index" aria-label="Versions"><a href="#v0-1-2">0.1.2 · Upcoming</a><a href="#v0-1-1">0.1.1 · Released</a></nav>
+    </div>
+    <section id="v0-1-2" class="version-entry" aria-label="Chrome 0.1.2">
+      <article data-language-section="zh" lang="zh-CN" aria-labelledby="version-012-zh">
+        <header class="version-heading"><h2 id="version-012-zh"><a href="#v0-1-2">0.1.2</a></h2><span class="release-state upcoming">待发布</span></header>
+        <p class="version-date">尚未在 Chrome 网上应用店发布，当前商店版本可能不包含以下功能。</p>
+        <h3>新增功能</h3>
+        <ul><li>保存英文单词后查询 IPA 音标，优先显示美式发音；查询失败不影响保存，可在词表中重试。</li><li>在词表和复习页点击朗读单词，优先使用设备上的美式英语语音。</li><li>文章多选采集：挑选多个英文单词或短语，预览语境后统一保存。</li><li>按网站授权悬浮采集按钮，支持全局关闭、逐站隐藏，以及在设置中恢复显示。</li></ul>
+        <h3>体验优化</h3>
+        <ul><li>词表增加分页，每页可选 10、20、50 或 100 个单词，并记住你的选择；搜索和筛选覆盖完整词库。</li><li>桌面词库采用双栏阅读布局：搜索和筛选保持可见，词表独立滚动，顶部工具栏和底部分页随时可用。</li><li>低频设置分组折叠，悬浮采集栏采用与 App 呼应的书页图标，隐藏品牌文字，保留三点菜单。</li><li>词库侧栏新增应用主页和隐私政策链接，支持中英文界面。</li></ul>
+        <h3>问题修复</h3>
+        <ul><li>隐藏的网站保留恢复入口；曾被旧版隐藏的网站，可先打开该网页，再点击扩展工具栏图标进入设置恢复。</li><li>调整左右栏滚动范围，避免滚动左侧设置时带动右侧词表。</li><li>采集预览更新时保留展开状态、滚动位置和键盘焦点。</li></ul>
+        <p class="release-footnote">音标查询仅向 Free Dictionary API 发送单词。<a href="../privacy/?lang=zh">了解数据如何处理</a>。</p>
+      </article>
+      <article data-language-section="en" lang="en" aria-labelledby="version-012-en" hidden>
+        <header class="version-heading"><h2 id="version-012-en"><a href="#v0-1-2">0.1.2</a></h2><span class="release-state upcoming">Upcoming</span></header>
+        <p class="version-date">Not yet released on the Chrome Web Store. The current store version may not include these features.</p>
+        <h3>New features</h3>
+        <ul><li>Look up IPA after saving English words, preferring US pronunciation. Failed lookups do not affect saving and can be retried from the notebook.</li><li>Listen to words from the notebook and review page, preferring an on-device US English voice.</li><li>Collect multiple English words or phrases from articles, preview their context, and save them together.</li><li>Enable floating capture buttons per website, turn them off globally, hide them on individual sites, and restore them in settings.</li></ul>
+        <h3>Improvements</h3>
+        <ul><li>Paginated vocabulary with 10, 20, 50 or 100 words per page and a saved page-size preference. Search and filters cover the full notebook.</li><li>A two-column desktop workspace keeps search and filters visible while the word list scrolls independently between its toolbar and page controls.</li><li>Collapsible settings and a compact floating control with a book icon inspired by the app, no brand text, and a separate three-dot action.</li><li>Homepage and privacy-policy links in the notebook sidebar, with English and Chinese labels.</li></ul>
+        <h3>Fixes</h3>
+        <ul><li>Hidden websites keep a restore action. For sites hidden by older versions, open the site and click the extension toolbar icon to restore the button in settings.</li><li>Separate scroll areas prevent scrolling the left settings panel from moving the vocabulary list.</li><li>Capture preview updates preserve expanded context, scroll position and keyboard focus.</li></ul>
+        <p class="release-footnote">IPA lookup sends only the word to Free Dictionary API. <a href="../privacy/?lang=en">Read how data is handled</a>.</p>
+      </article>
+    </section>
+    <section id="v0-1-1" class="version-entry" aria-label="Chrome 0.1.1">
+      <article data-language-section="zh" lang="zh-CN" aria-labelledby="version-011-zh">
+        <header class="version-heading"><h2 id="version-011-zh"><a href="#v0-1-1">0.1.1</a></h2><span class="release-state">已发布</span></header>
+        <p class="version-date">发布日期：<time datetime="2026-10-15">2026 年 10 月 15 日</time></p>
+        <h3>版本概览</h3><p>从选中的文本和当前可见的 YouTube 字幕保存英文及中文词语，并在本地复习。</p>
+        <p class="release-footnote">本条记录概述该版本的公开功能，不作为相对更早版本的逐项差异清单。<a href="https://chromewebstore.google.com/detail/echowords/lpfgbckgjejjfgamibegphkdmpboeeep">查看 Chrome 网上应用店</a>。</p>
+      </article>
+      <article data-language-section="en" lang="en" aria-labelledby="version-011-en" hidden>
+        <header class="version-heading"><h2 id="version-011-en"><a href="#v0-1-1">0.1.1</a></h2><span class="release-state">Released</span></header>
+        <p class="version-date">Released <time datetime="2026-10-15">October 15, 2026</time></p>
+        <h3>Version overview</h3><p>Save English and Chinese words from selected text and currently visible YouTube captions, then review them locally.</p>
+        <p class="release-footnote">This entry summarizes publicly listed capabilities rather than itemizing changes from earlier versions. <a href="https://chromewebstore.google.com/detail/echowords/lpfgbckgjejjfgamibegphkdmpboeeep">View on the Chrome Web Store</a>.</p>
+      </article>
+    </section>
+  </main>
+  <footer class="site-footer shell"><span data-brand-footer>© 语栖</span><a href="../?lang=zh" data-nav-zh>主页</a><a href="../?lang=en" data-nav-en>Home</a><a href="../privacy/?lang=zh" data-nav-zh>Chrome 扩展隐私政策</a><a href="../privacy/?lang=en" data-nav-en>Chrome extension privacy</a><a href="../ios/privacy/?lang=zh" data-nav-zh>iOS 应用隐私政策</a><a href="../ios/privacy/?lang=en" data-nav-en>iOS app privacy</a><a href="mailto:acboo2020@gmail.com">联系 / Contact</a></footer>
+</body>
+</html>
